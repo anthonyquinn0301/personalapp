@@ -1,0 +1,60 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+<div class="jumbotron">
+    <h1>This is the EJS Demo page</h1>
+
+</div>
+
+<h2>Here are the three javascript variables passed in from app.js</h2>
+Note that the "pre" tag respects spacing and uses a
+monospaced type font.
+<pre>
+name = <%= name %>
+
+vals = <%= vals %>
+
+people = <%= JSON.stringify(people,null,2) %>
+
+people = <%= people %>
+
+</pre>
+If we don't call JSON.stringify, then we just get
+somewhat useless strings for the people variable:
+
+<h2> Here we turn a list of values into an HTML list</h2>
+<ul>
+<% vals.map( (v) => { %>
+    <li> <%= v %> </li>
+<% }) %>
+</ul>
+
+<h2> Here a list of JSON objects becomes a table </h2>
+<div class="row">
+    <div class="col" style="background-color:yellow">
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr><th>Name</th><th>Age</th></tr>
+            </thead>
+            <tbody>
+        <% people.map( (p) => { %>
+            <tr>
+                <td><%= p['name'] %></td>
+                <td><%= p['age']  %></td>
+            </tr>
+        <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <div class="col" style="background-color:red">
+        This is column 2
+    </div>
+    <div class="col" style="background-color:green">
+        This is column 3
+    </div>
+</div>
+
+
+
+
+<%- include('bootfooter') -%>

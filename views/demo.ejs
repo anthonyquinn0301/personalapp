@@ -1,0 +1,112 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+<div class="jumbotron">
+    <h1> Demo </h1>
+    <p> Here is a table of Composer names, as well as
+    extra information about them, such as their birth dates and deaths, and the places associated with them
+  </p>
+</div>
+
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Wolfgang Amadeus Mozart</th>
+      <th>Ludwig van Beethoven</th>
+      <th>Johann Sebastian Bach</th>
+      <th>Franz Joseph Haydn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>January 27, 1756 - December 5, 1791</td>
+      <td>December 1770 - March 26, 1827</td>
+      <td>March 31, 1685 - July 28, 1750</td>
+      <td>March 31, 1732 - May 31, 1809</td>
+    </tr>
+    <tr>
+      <td> Mozart's Birthplace, Salzburg, Austria</td>
+      <td>Bonn, Germany</td>
+      <td>Eisenach, Germany</td>
+      <td>Rohrau, Austria</td>
+    </tr>
+    <tr>
+      <td>Innere Stadt, Vienna, Austria</td>
+      <td>Vienna, Austria</td>
+      <td>Leipzig, Germany</td>
+      <td>Vienna, Austria</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+<h2>Links to famous composer playlists!</h2>
+<ol>
+     <li><a href="https://www.youtube.com/watch?v=wfF0zHeU3Zs&list=RDEMiV30cZkQLMl8dvkOpVcP8g&start_radio=1">Beethoven</a></li>
+     <li><a href="https://www.youtube.com/watch?v=aeEmGvm7kDk&list=RDEMcHoPxTOy3R6SYpiLmJ_e4Q&start_radio=1">Mozart</a></li>
+     <li><a href="https://www.youtube.com/watch?v=xDWG9SrB4io&list=RDEMVuJMFQY6SyvaEaGiZndKfQ&start_radio=1">Bach</a></li>
+     <li><a href="https://www.youtube.com/watch?v=PdZLujN8tFs&list=RDEMNFJUQ-TEM8Tj-93mKCZCww&start_radio=1">Haydn</a></li>
+</ol>
+<hr>
+
+<h1> Links to Composer Bios </h1>
+<ul>
+<li> <a href="https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart">Mozart</a> <img width="200" src="/images/Mozart.jpg"> </li>
+<li> <a href="https://en.wikipedia.org/wiki/Ludwig_van_Beethoven">Beethoven</a> <img width="200" src="/images/Beethoven.jpg"> </li>
+<li> <a href="https://en.wikipedia.org/wiki/Johann_Sebastian_Bach">Bach</a> <img width="200" src="/images/Bach.jpg"> </li>
+<li> <a href="https://en.wikipedia.org/wiki/Joseph_Haydn">Haydn</a> <img width="200" src ="/images/Haydn.jpg"> </li>
+</ul>
+
+
+  <hr>
+  <form method="post" action="/showformdata" class="bg-info">
+    Share your name:<br>
+    <input type="text"
+           name="fullname"
+           placeholder="your full name"><br>
+    <br>
+
+    Do you like classical music(or at least you think you could get into it?):<br>
+    yes <input type="radio" name="like/interest?" value="yes"><br>
+    no <input type="radio" name="like/interest?" value="no"><br>
+    unsure<input type="radio" name="like/interest?" value="unsure"><br>
+    <br>
+
+    Whether you like classical or not, feel free to share what your favorite music type is:<br>
+    <select name="favorite">
+      <option value="Rock">Rock</option><br>
+      <option value="Hip-Hop">Hip-Hop</option><br>
+      <option value="Country">Country</option><br>
+      <option value="Metal">Metal</option><br>
+      <option value="Folk">Folk</option><br>
+      <option vlaue="Jazz">Jazz</option><br>
+      <option value="Blues">Blues</option><br>
+      <option value="Pop">Pop</option><br>
+      <option value="Classical">Classical</option><br>
+      <option value="I like 'em all!">All</option><br>
+    </select><br>
+    <br>
+
+    Have you heard of any of these composers? If so, select one or more:<br>
+    Beethoven <input type="checkbox" name="composer" value="Beethoven"><br>
+    Mozart <input type ="checkbox" name="composer" value="Mozart"><br>
+    Bach <input type="checkbox" name="composer" value="Bach"><br>
+    Haydn <input type="checkbox" name="composer" value="Haydn"><br>
+    <br>
+
+    Share some things about yourself:<br>
+    <textarea name="bio" rows="10" cols="40"></textarea><br>
+    <br>
+
+    Click a music type, and it will tell you what that type says about a person!(just for fun, do not take seriously!)<br>
+    <button type="button" onclick="alert('Gentle and Creative')">Heavy Metal</button><br>
+    <button type="button" onclick="alert('Intelligent')">Classical</button><br>
+    <button type="button" onclick="alert('Extroverted')">Hip-Hop</button><br>
+    <button type="button" onclick="alert('Outgoing and Nervous')">Pop</button><br>
+    <button type="button" onclick="alert('Easygoing but Selfish')">Rock</button><br>
+    <button type="button" onclick="alert('Deep Thinkers')">Folk, Jazz, and Blues</button><br>
+    <button type="button" onclick="alert('Hardworking and Close-Minded')">Country</button><br>
+    <hr>
+    <input type="submit" value="Enter">
+  </form>
+<%- include('bootfooter') -%>

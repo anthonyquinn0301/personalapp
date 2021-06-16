@@ -1,0 +1,59 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+    <h1>
+      Form demo
+    </h1>
+
+<form method="post" action="/showformdata" class="bg-info">
+  Enter your name:
+  <input type="text"
+         name="fullname"
+         placeholder="your full name"><br>
+  When were you born?
+  <input type="date"
+         name="birthday"><br>
+  What is your favorite color?
+  <input type="color"
+         name="favoriteColor"> <br>
+
+  What grade are you going into next year?
+  <select name="grade1">
+    <option>9th</option>
+    <option>10th</option>
+    <option>11th</option>
+    <option>12th</option>
+  </select>
+
+  <select name="grade2">
+    <option value="9">freshman</option>
+    <option value="10">sophomore</option>
+    <option value="11">junior</option>
+    <option value="12">senior</option>
+  </select>
+  <br>
+  Tell us about yourself:
+  <textarea name="bio" rows="10" cols="40"></textarea>
+  <br>
+  Are you over 18?<br>
+  yes <input type="radio" name="over18" value="yes"><br>
+  no  <input type="radio" name="over18" value="no"><br>
+  don't want to say
+      <input type="radio" name="over18" value="maybe"><br>
+
+ What are your interests:<br>
+  reading <input type="checkbox" name="interest" value="reading"><br>
+  coding  <input type="checkbox" name="interest" value="code"><br>
+  singing <input type="checkbox" name="interest" value="voice"><br>
+  video games
+          <input type="checkbox" name="interest" value="games"><br>
+  meditation
+          <input type="checkbox" name="interest" value="zen"><br>
+  <hr>
+
+  <input type="submit" value="Register now">
+</form>
+
+<hr>
+
+
+<%- include('bootfooter') -%>
