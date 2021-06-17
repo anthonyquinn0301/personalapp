@@ -60,8 +60,30 @@ app.get("/about", (request, response) => {
 });
 
 
+app.get("/quiz",(req,res) => {
+  res.render('quiz')
+})
 
+app.post("/answers",(req,res) => {
+  const question1 = req.body.question1
+  const question2 = req.body.question2
+  const question3 = req.body.question3
+  const question4 = req.body.question4
+  const question5 = req.body.question5
+  const question6 = req.body.question6
+  const question7 = req.body.question7
+  const question8 = req.body.question8
+  res.locals.question1 = question1
+  res.locals.question2 = question2
+  res.locals.question3 = question3
+  res.locals.question4 = question4
+  res.locals.question5 = question5
+  res.locals.question6 = question6
+  res.locals.question7 = question7
+  res.locals.question8 = question8
+  res.render('answers')
 
+})
 
 app.post("/showformdata", (request,response) => {
   response.json(request.body)

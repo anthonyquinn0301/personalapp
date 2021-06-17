@@ -1,0 +1,73 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+    <h1>
+      Let's take a quiz!
+    </h1>
+
+<form method="post" action="/answers" class="bg-info">
+How many musical periods are typically studied(in music major studies)?<br>
+  <select name ="question1">
+    <option>6</option>
+    <option>3</option>
+    <option>7</option>
+    <option>4</option>
+    </select>
+    <br>
+    <br>
+  Music from the Renaissance Period is grouped into two categories: Sacred and......<br>
+  <input type="text"
+         name="question2"><br>
+   <br>s
+  Who does this picture depict? <br>
+  <img src="/images/Beethovenquiz.jpg"><br>
+  <input type="text"
+         name="question3"> <br>
+   <br>
+
+   Gregorian Chant was popular during which musical period?<br>
+   Baroque <input type="radio" name="question4" value="Baroque"><br>
+   Medieval <input type="radio" name="question4" value="Medieval"><br>
+
+  <br>
+  What does this depict?<br>
+  <img src="/images/Harpsichord.jpg">
+  <select name="question5">
+    <option>Organ</option>
+    <option>Fortepiano</option>
+    <option>Harpsichord</option>
+    <option>Piano</option>
+  </select><br>
+  <br>
+  Which of these composers is not from the Classical Period?<br>
+  <select name="question6">
+    <option>Mozart</option>
+    <option>Haydn</option>
+    <option>Bach</option>
+    <option>Gronemeyer</option>
+  </select><br>
+  <br>
+  What is the difference between an opera and an oratorio?<br>
+  Oratorio is sacred, but opera is secular <input type="radio" name="question7" value="sacred/secular"><br>
+  Only operas have choruses. <input type="radio" name="question7" value="choruses"><br>
+  There is no difference. <input type="radio" name="question7" value="nothing"><br>
+  Oratorio requires staging. <input type="radio" name="question7" value="staging"><br>
+  <br>
+ 20th century rock music is influenced my these styles(select all that apply):<br>
+  Jazz <input type="checkbox" name="question8" value="Jazz"><br>
+  R&B  <input type="checkbox" name="question8" value="R&B"><br>
+  Country <input type="checkbox" name="question8" value="Country"><br>
+  Gregorian
+          <input type="checkbox" name="question8" value="Gregorian"><br>
+  Plainchant
+          <input type="checkbox" name="question8" value="Plainchant"><br>
+  None
+          <input type="checkbox" name="question8" value="None"><br>
+  <hr>
+
+  <input type="submit" value="Enter answers">
+</form>
+
+<hr>
+
+
+<%- include('bootfooter') -%>
