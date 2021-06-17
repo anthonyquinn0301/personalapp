@@ -1,0 +1,17 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+<h1>
+  Enter some keywords here based on your personal music tastes and
+  see what happens!
+  </h1>
+<form method="post" action="/getInfo" class="bg-danger">
+  Enter your keywords here.<br>
+  <input type="text"
+         name="keywords"><br>
+  <hr>
+  <input type="submit" value="Enter">
+</form>
+
+
+
+<%- include('bootfooter') -%>

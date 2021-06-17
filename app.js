@@ -85,6 +85,22 @@ app.post("/answers",(req,res) => {
 
 })
 
+app.get("/search", (req,res) => {
+  res.render('search')
+})
+
+app.post("/getInfo", async (req,res,next) => {
+    try {
+      const keywords = req.body.keywords
+      const url = "https://www.youtube.com/results?search_query="+keywords
+      const result = await axios.get(url)
+      res.locals.results = result.data.results
+      res.json(result.data)
+    } catch(error){
+      next(error)
+    }
+})
+
 app.post("/showformdata", (request,response) => {
   response.json(request.body)
 })
