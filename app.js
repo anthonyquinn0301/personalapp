@@ -90,15 +90,19 @@ app.get("/search", (req,res) => {
 })
 
 app.post("/getInfo", async (req,res,next) => {
-    try {
-      const keywords = req.body.keywords
-      const url = "https://www.youtube.com/results?search_query="+keywords
-      const result = await axios.get(url)
-      res.locals.results = result.data.results
-      res.json(result.data)
-    } catch(error){
-      next(error)
-    }
+  try {
+    const keyword = req.body.keyword
+    const number = req.body.number
+    const url ="https://anapioficeandfire.com/api/"+keyword+"/"+number
+    const result = await axios.get(url)
+    console.dir(result.data)
+    console.log('result')
+    res.locals.result = result.data
+    res.json(result.data)
+
+  } catch(error){
+    next(error)
+  }
 })
 
 app.post("/showformdata", (request,response) => {

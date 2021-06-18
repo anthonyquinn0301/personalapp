@@ -1,13 +1,16 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
 <h1>
-  Enter some keywords here based on your personal music tastes and
-  see what happens!
+  For fun, we have a Song of Ice and Fire section here!
   </h1>
 <form method="post" action="/getInfo" class="bg-danger">
-  Enter your keywords here.<br>
+  Enter either "characters", "books", or "houses" (the word itself).<br>
   <input type="text"
-         name="keywords"><br>
+         name="keyword"><br>
+  <br>
+  Now enter a number(in numeral form).<br>
+  <input type="text"
+         name="number"><br>
   <hr>
   <input type="submit" value="Enter">
 </form>
