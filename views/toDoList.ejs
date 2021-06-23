@@ -1,0 +1,44 @@
+
+
+  <div class="jumbotron">
+    <h1> ToDo List for <%= user.googlename %> </h1>
+    <p> Here is your list of things to do! </p>
+
+
+
+      <% let numTodo=0
+         items.forEach(item => {
+         if (!item.completed) {
+             numTodo += 1
+         }
+        %>
+           <a href="/todo/remove/<%=item._id %>">
+               X
+           </a>
+           ::
+           <%= item.item %>
+           <% if (item.completed) {%>
+               <a href="/todo/switchComplete/<%= item._id %>">
+                   done
+               </a>
+           <% } else {%>
+               <a href="/todo/switchComplete/<%= item._id %>">
+                   todo
+               </a>
+           <%}%>
+          <br>
+      <% }) %>
+
+
+
+      <form method="post" action="todo">
+          new item: <input type="text" name="item"><br>
+          <input type="submit" value="store">
+      </form>
+
+      <% if (numTodo==0) {%>
+          <h3>Congratulations!!</h3>
+              You completed all of your tasks!
+      <%}%>
+
+  </div>

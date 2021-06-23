@@ -1,0 +1,23 @@
+
+
+  <div class="jumbotron">
+    <h1> <%= im.title %></h1>
+    <p> Here are the courses for the minor</p>
+
+    <ul>
+      <%  for(let j=0; j<courses.length; j++){
+          course = courses[j]
+      %>
+        <li>
+          <%= course.course %>
+          <% if (course.ownerId==user.id) {%> (*)<%}%>
+        </li>
+      <%}%>
+    </ul>
+
+      <form method="post" action="/im/addCourse/<%= im._id %>">
+          new course: <input type="text" name="course"><br>
+          <input type="submit" value="add course to minor">
+      </form>
+
+  </div>
