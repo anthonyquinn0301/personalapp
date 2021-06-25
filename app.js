@@ -200,6 +200,8 @@ app.post("/getInfo", async (req,res,next) => {
     res.json(result.data)
 
   } catch(error){
+    console.log("Error in...")
+    console.dir(error)
     next(error)
   }
 })
@@ -208,11 +210,67 @@ app.post("/showformdata", (request,response) => {
   response.json(request.body)
 })
 
+app.get("/genre", async(req,res,next) => {
+  try{
+    res.render('genre')
+  }catch(err){
+    console.log("Error in....")
+    console.dir(err)
+    next(err)
+  }
+})
+
+const Genre = require('./models/Genre')
+
+app.post("/genre", isLoggedIn, async(req,res,next) => {
+  try{
+    const genre = req.body.genre
+    const genredoc = new Genre({
+      userId:req.user._id,
+      genre:genre
+  })
+    const result = await genredoc.save()
+    console.log('result=')
+    console.dir(result)
+    res.redirect('/genres')
+}catch(err){
+  console.log("Error in....")
+  console.dir(err)
+  next(err)
+}
+})
+
+app.get('/genres', isLoggedIn, async (req,res,next) => {
+  try{
+    res.locals.genres = await Genre.find({})
+    console.log('genres='+JSON.stringify(res.locals.genres.length))
+    res.render('genres')
+  }catch(err){
+    console.log("Error in....")
+    console.dir(err)
+    next(err)
+  }
+})
+
+app.get('/genreremove/:genre_id', isLoggedIn, async (req,res,next) => {
+  try{
+    const genre_id = req.params.genre_id
+    console.log(`id=${genre_id}`)
+    await Genre.deleteOne({_id:genre_id})
+    res.redirect('/genres')
+  }catch(err){
+    console.log("Error in....")
+    console.dir(err)
+    next(err)
+  }
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+
 
 // error handler
 app.use(function(err, req, res, next) {

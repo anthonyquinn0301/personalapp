@@ -1,0 +1,33 @@
+
+
+  <div class="jumbotron">
+
+  <h1> Genre </h1>
+  <h2>List of all Genres </h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr><th>Genre</th><th>userId</th></tr>
+    </thead>
+    <tbody>
+  <% for(let i=0; i<genres.length; i++){
+      genre = genres[i]
+      console.log(`i=${i} document=${genre}`)
+  %>
+    <tr>
+      <td><%= genre.genre %></td>
+      <td> <a href="/genreremove/<%= genre._id %>"> X </a>
+          <%= genre.userId %>
+      </td>
+
+    </tr>
+  <%}%>
+
+  <h2>Add Genre:</h2>
+
+  <form method="post" action="/genre">
+    <input type="text" name="genre"> Genre <br>
+    <input type="submit">
+  </form>
+  </div>
+
+  <!-- Hello World! -->
